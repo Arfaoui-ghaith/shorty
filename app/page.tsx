@@ -153,7 +153,7 @@ export default function Home() {
                 </div>
               </ModalBody>
               <ModalFooter>
-                <Button endContent={copied ? <FaCheck /> : <FaCopy />} color="primary" onPress={() => handleCopy(`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`)}>
+                <Button endContent={copied ? <FaCheck /> : <FaCopy />} color="primary" onPress={() => handleCopy(`${process.env["NEXT_PUBLIC_SERVER_URL"]}/${data?.shortened_id}`)}>
                   Copy
                 </Button>
               </ModalFooter>
