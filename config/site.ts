@@ -9,20 +9,9 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
+      label: "Portfolio",
+      href: "https://arfaoui-ghaith.github.io/portfolio-ghaith-arfaoui/",
+      target: "_blank",
     },
   ],
   navMenuItems: [
@@ -60,10 +49,9 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/Arfaoui-ghaith",
+    upwork: "https://www.upwork.com/freelancers/~01120eca52fa98217a",
+    linkedin: "https://www.linkedin.com/in/ghaith-arfaoui-7501aa180/",
+    portfolio: "https://arfaoui-ghaith.github.io/portfolio-ghaith-arfaoui/",
   },
 };

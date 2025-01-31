@@ -26,6 +26,10 @@ import {
   Logo,
 } from "@/components/icons";
 
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaSquareUpwork, FaUpwork } from "react-icons/fa6";
+
+
 export const Navbar = () => {
   const searchInput = (
     <Input
@@ -80,14 +84,14 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
+          <Link isExternal aria-label="Upwork" href={siteConfig.links.upwork}>
+            <FaSquareUpwork className="text-default-500" />
           </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
+          <Link isExternal aria-label="Linkedin" href={siteConfig.links.linkedin}>
+            <FaLinkedinIn className="text-default-500" />
           </Link>
           <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
+            <FaGithub className="text-default-500" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
