@@ -107,7 +107,8 @@ export default function Home() {
           <span className={title({ color: "blue" })}>Shortify&nbsp;</span>
           <span className={title()}>your links with just one click</span>
           <div className={subtitle({ class: "mt-4" })}>
-            Beautiful, fast and modern React UI library.
+            Note: If the shortened link is invalid, you will be automatically
+            redirected here
           </div>
         </div>
 
