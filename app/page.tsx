@@ -133,17 +133,18 @@ export default function Home() {
                 Congratulations 🎉
               </ModalHeader>
               <ModalBody>
-                <div className="flex gap-3 items-center ">
+                <div className="flex gap-4 items-center ">
                   <Image
                     alt="heroui logo"
                     height={40}
                     radius="sm"
                     src={data?.logo}
                     width={40}
+                    className="media-sm:mr-10"
                   />
                   <div className="flex flex-col">
-                  <Link underline="always" href={`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}>
-                    {`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}
+                  <Link underline="always" href={`${process.env["NEXT_PUBLIC_SERVER_URL"]}/${data?.shortened_id}`}>
+                    {`${process.env["NEXT_PUBLIC_SERVER_URL"]}/${data?.shortened_id}`}
                   </Link>
                   <Chip className="mt-2" color={handleStatus(data?.status as number)} variant="dot">
                     HTTP {data?.status}
