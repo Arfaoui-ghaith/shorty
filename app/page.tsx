@@ -113,7 +113,7 @@ export default function Home() {
         </div>
 
         <div className="flex gap-4">
-          <Input onChange={(e) => setUrl(e.target.value)} fullWidth label="Long URL" size="sm" type="url" />
+          <Input onChange={(e) => setUrl(e.target.value)} fullWidth label="URL" size="sm" type="url" />
           <Button
             onPress={shorten}
             color="primary"
