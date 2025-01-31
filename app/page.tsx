@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Input } from "@heroui/input";
-import { Button } from "@heroui/button";
 import {
   Modal,
   ModalContent,
@@ -9,6 +8,9 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Image,
+  Chip,
+  Button
 } from "@heroui/react";
 
 import { title, subtitle } from "@/components/primitives";
@@ -27,6 +29,8 @@ export default function Home() {
     shortened_id: string;
     timestamp: Date;
     url: string;
+    logo: string;
+    status: number;
     _v: number;
     _id: string;
   }
@@ -52,6 +56,18 @@ export default function Home() {
 
   const handleConfetti = () => {
     confetti();
+  };
+
+  const handleStatus = (status: number) => {
+    if (status.toString().startsWith("2")) {
+      return "success";
+    } else if (status.toString().startsWith("4")) {
+      return "warning";
+    } else if (status.toString().startsWith("5")) {
+      return "danger";
+    } else {
+      return "secondary";
+    }
   };
 
   const shorten = async () => {
@@ -102,6 +118,7 @@ export default function Home() {
             color="primary"
             size="lg"
             variant="shadow"
+            isLoading={isLoading}
           >
             Shortify
           </Button>
@@ -115,9 +132,23 @@ export default function Home() {
                 Congratulations 🎉
               </ModalHeader>
               <ModalBody>
-                <Link underline="always" href={`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}>
-                  {`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}
-                </Link>
+                <div className="flex gap-3 items-center ">
+                  <Image
+                    alt="heroui logo"
+                    height={40}
+                    radius="sm"
+                    src={data?.logo}
+                    width={40}
+                  />
+                  <div className="flex flex-col">
+                  <Link underline="always" href={`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}>
+                    {`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`}
+                  </Link>
+                  <Chip className="mt-2" color={handleStatus(data?.status as number)} variant="dot">
+                    HTTP {data?.status}
+                  </Chip>
+                  </div>
+                </div>
               </ModalBody>
               <ModalFooter>
                 <Button endContent={copied ? <FaCheck /> : <FaCopy />} color="primary" onPress={() => handleCopy(`${process.env["NEXT_PUBLIC_SERVER_URL"]}/short-url/${data?.shortened_id}`)}>

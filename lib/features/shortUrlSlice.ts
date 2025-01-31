@@ -1,12 +1,10 @@
 import { apiSlice } from "./api";
 
-const SHORTURL_URL = "/short-url";
-
 export const shortUrlApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     addShortUrl: builder.mutation({
       query: (data) => ({
-        url: `${SHORTURL_URL}/shorten`,
+        url: `/shorten`,
         method: "post",
         body: data.payload,
       }),
